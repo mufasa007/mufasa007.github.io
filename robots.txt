@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /css/
+Disallow: /fancybox/
+Disallow: /images/
+Disallow: /js/
+
+Sitemap: https://blog.linkee.top/sitemap.xml
+Sitemap: https://blog.linkee.top/baidusitemap.xml
