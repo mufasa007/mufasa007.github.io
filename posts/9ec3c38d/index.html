@@ -19,31 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.linkee.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="1，问题描述LCR 024. 反转链表 难度：简单">
+    <meta name="description" content="1，问题描述24. 两两交换链表中的节点 难度：中等">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LCR 024. 反转链表（简单）">
-<meta property="og:url" content="https://blog.linkee.top/posts/34dbe3cb/index.html">
+<meta property="og:title" content="24. 两两交换链表中的节点(中等)">
+<meta property="og:url" content="https://blog.linkee.top/posts/9ec3c38d/index.html">
 <meta property="og:site_name" content="万雨的博客">
-<meta property="og:description" content="1，问题描述LCR 024. 反转链表 难度：简单">
+<meta property="og:description" content="1，问题描述24. 两两交换链表中的节点 难度：中等">
 <meta property="og:locale">
-<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503061126083.jpg">
-<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503061126340.jpg">
-<meta property="article:published_time" content="2025-03-06T03:25:50.000Z">
-<meta property="article:modified_time" content="2025-03-06T03:40:51.562Z">
+<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503111637790.jpg">
+<meta property="article:published_time" content="2025-03-11T08:37:50.000Z">
+<meta property="article:modified_time" content="2025-03-11T08:39:08.549Z">
 <meta property="article:author" content="万雨">
 <meta property="article:tag" content="leetcode">
 <meta property="article:tag" content="字节跳动">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503061126083.jpg">
+<meta name="twitter:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503111637790.jpg">
 
 
-<link rel="canonical" href="https://blog.linkee.top/posts/34dbe3cb/">
+<link rel="canonical" href="https://blog.linkee.top/posts/9ec3c38d/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"cn","comments":true,"permalink":"https://blog.linkee.top/posts/34dbe3cb/","path":"posts/34dbe3cb/","title":"LCR 024. 反转链表（简单）"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"cn","comments":true,"permalink":"https://blog.linkee.top/posts/9ec3c38d/","path":"posts/9ec3c38d/","title":"24. 两两交换链表中的节点(中等)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LCR 024. 反转链表（简单） | 万雨的博客</title>
+<title>24. 两两交换链表中的节点(中等) | 万雨的博客</title>
   
 
 
@@ -143,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%8C%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-text">1，问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%8C%E6%80%9D%E8%80%83%E8%BF%87%E7%A8%8B"><span class="nav-text">2，思考过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%A4%84%E7%90%86"><span class="nav-text">3，代码处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%8C%E6%80%9D%E8%80%83%E8%BF%87%E7%A8%8B"><span class="nav-text">4，思考过程</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%8C%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-text">1，问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%8C%E5%88%9D%E6%AD%A5%E6%80%9D%E8%80%83"><span class="nav-text">2，初步思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%A4%84%E7%90%86"><span class="nav-text">3，代码处理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,7 +195,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="cn">
-    <link itemprop="mainEntityOfPage" href="https://blog.linkee.top/posts/34dbe3cb/">
+    <link itemprop="mainEntityOfPage" href="https://blog.linkee.top/posts/9ec3c38d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -209,12 +208,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="LCR 024. 反转链表（简单） | 万雨的博客">
+      <meta itemprop="name" content="24. 两两交换链表中的节点(中等) | 万雨的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LCR 024. 反转链表（简单）
+          24. 两两交换链表中的节点(中等)
         </h1>
 
         <div class="post-meta-container">
@@ -226,7 +225,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-03-06 11:25:50 / Modified: 11:40:51" itemprop="dateCreated datePublished" datetime="2025-03-06T11:25:50+08:00">2025-03-06</time>
+      <time title="Created: 2025-03-11 16:37:50 / Modified: 16:39:08" itemprop="dateCreated datePublished" datetime="2025-03-11T16:37:50+08:00">2025-03-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,34 +246,28 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="1，问题描述"><a href="#1，问题描述" class="headerlink" title="1，问题描述"></a>1，问题描述</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/UHnkqh/">LCR 024. 反转链表</a></p>
-<p>难度：简单</p>
-<p>给定单链表的头节点 <code>head</code> ，请反转链表，并返回反转后的链表的头节点。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="1，问题描述"><a href="#1，问题描述" class="headerlink" title="1，问题描述"></a>1，问题描述</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点</a></p>
+<p>难度：中等</p>
+<p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
 <p><strong>示例 1：</strong></p>
-<p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503061126083.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5]</span><br><span class="line">输出：[5,4,3,2,1]</span><br></pre></td></tr></table></figure>
+<p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503111637790.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4]</span><br><span class="line">输出：[2,1,4,3]</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202503061126340.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2]</span><br><span class="line">输出：[2,1]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = []</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = []</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1]</span><br><span class="line">输出：[1] </span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li>链表中节点的数目范围是 <code>[0, 5000]</code></li>
-<li><code>-5000 &lt;= Node.val &lt;= 5000</code></li>
+<li>链表中节点的数目在范围 <code>[0, 100]</code> 内</li>
+<li><code>0 &lt;= Node.val &lt;= 100</code></li>
 </ul>
-<p>**进阶：**链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？</p>
-<p>注意：本题与主站 206 题相同： <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list/">https://leetcode-cn.com/problems/reverse-linked-list/</a></p>
-<h2 id="2，思考过程"><a href="#2，思考过程" class="headerlink" title="2，思考过程"></a>2，思考过程</h2><p>​	涉及子问题，使用自上而下的递归，使用递归直接就解答出来了</p>
-<p>​	使用迭代法就是假象一个虚拟的pre（前一个）节点，与head节点、next节点进行交换</p>
-<h2 id="3，代码处理"><a href="#3，代码处理" class="headerlink" title="3，代码处理"></a>3，代码处理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> support.ListNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">_LCR024</span>反转链表 &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 涉及子问题，使用自上而下的递归</span></span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">newHead</span> <span class="operator">=</span> reverseList(head.next);</span><br><span class="line">        head.next.next = head;</span><br><span class="line">        head.next = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList_iteration</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">next</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="literal">null</span>) &#123;</span><br><span class="line">            next = head.next;<span class="comment">// 临时缓存下一个节点</span></span><br><span class="line">            head.next = pre;<span class="comment">// 本节点的下一个节点指向前节点</span></span><br><span class="line">            pre = head;<span class="comment">// 缓存当前节点（下次循环的，前节点）</span></span><br><span class="line">            head = next;<span class="comment">// 更新</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        _LCR024反转链表 lcr024 = <span class="keyword">new</span> <span class="title class_">_LCR024</span>反转链表();</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">reverseList</span> <span class="operator">=</span> lcr024.reverseList_iteration(<span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">2</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">3</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">4</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">5</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">6</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">7</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">8</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">9</span>, <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">10</span>)))))))))));</span><br><span class="line">        <span class="keyword">while</span> (reverseList != <span class="literal">null</span>) &#123;</span><br><span class="line">            System.out.println(reverseList.val);</span><br><span class="line">            reverseList = reverseList.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1,2,3,4,5,6,7</span></span><br><span class="line"><span class="comment">// 2,1,3,4,5,6,7</span></span><br></pre></td></tr></table></figure>
+<h2 id="2，初步思考"><a href="#2，初步思考" class="headerlink" title="2，初步思考"></a>2，初步思考</h2><p>​	直接想到迭代法进行处理，其实像这种子问题都可以转为迭代或者递归处理</p>
+<h2 id="3，代码处理"><a href="#3，代码处理" class="headerlink" title="3，代码处理"></a>3，代码处理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> support.ListNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">_24</span>两两交换链表中的节点 &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解法：递归处理</span></span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">swapPairs_recursion</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="literal">null</span>||head.next==<span class="literal">null</span>)<span class="keyword">return</span> head;<span class="comment">// 递归结束条件</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">newHead</span> <span class="operator">=</span> head.next;<span class="comment">// 下一个节点会变成头节点</span></span><br><span class="line">        head.next = swapPairs_recursion(newHead.next);<span class="comment">// 递归处理下下一个节点的关系</span></span><br><span class="line">        newHead.next = head;<span class="comment">// 重新组合</span></span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解法：迭代处理</span></span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">swapPairs_iterator</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">listNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>();</span><br><span class="line">        listNode.next = head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">tail</span> <span class="operator">=</span> listNode;</span><br><span class="line">        <span class="keyword">while</span> (tail.next != <span class="literal">null</span> &amp;&amp; tail.next.next != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">before</span> <span class="operator">=</span> tail;<span class="comment">// 非空</span></span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> tail.next;<span class="comment">// 非空</span></span><br><span class="line">            <span class="type">ListNode</span> <span class="variable">next</span> <span class="operator">=</span> cur.next;<span class="comment">// 非空</span></span><br><span class="line">            before.next = next;</span><br><span class="line">            cur.next = next.next;</span><br><span class="line">            next.next = cur;</span><br><span class="line"></span><br><span class="line">            tail = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> listNode.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        _24两两交换链表中的节点 two = <span class="keyword">new</span> <span class="title class_">_24</span>两两交换链表中的节点();</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">listNode</span> <span class="operator">=</span> two.swapPairs_iterator(ListNode.create(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;));</span><br><span class="line">        <span class="keyword">while</span> (listNode != <span class="literal">null</span>) &#123;</span><br><span class="line">            System.out.println(listNode.val);</span><br><span class="line">            listNode = listNode.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 0,1,2,3,4,5,6</span></span><br><span class="line"><span class="comment"> * 0,2</span></span><br><span class="line"><span class="comment"> * 0,2,1</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
 
-
-<h2 id="4，思考过程"><a href="#4，思考过程" class="headerlink" title="4，思考过程"></a>4，思考过程</h2><p>​	模式识别：一旦涉及子问题，可以用自上而下的递归和自下而上的动态规划问题</p>
 
     </div>
 
@@ -292,14 +285,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/520fa227/" rel="prev" title="88. 合并两个有序数组（简单）">
-                  <i class="fa fa-angle-left"></i> 88. 合并两个有序数组（简单）
+                <a href="/posts/77af3e8/" rel="prev" title="2850. 将石头分散到网格图的最少移动次数(中等)">
+                  <i class="fa fa-angle-left"></i> 2850. 将石头分散到网格图的最少移动次数(中等)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/93afe044/" rel="next" title="25. K 个一组翻转链表（困难）">
-                  25. K 个一组翻转链表（困难） <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
