@@ -19,31 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.linkee.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="1，问题描述难度：中等 LCR 021. 删除链表的倒数第 N 个结点">
+    <meta name="description" content="1，问题描述33. 搜索旋转排序数组 难度：中等">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LCR 021. 删除链表的倒数第N个结点(中等)">
-<meta property="og:url" content="https://blog.linkee.top/posts/3b87096e/index.html">
+<meta property="og:title" content="33. 搜索旋转排序数组(中等)">
+<meta property="og:url" content="https://blog.linkee.top/posts/3a1e4cdd/index.html">
 <meta property="og:site_name" content="万雨的博客">
-<meta property="og:description" content="1，问题描述难度：中等 LCR 021. 删除链表的倒数第 N 个结点">
+<meta property="og:description" content="1，问题描述33. 搜索旋转排序数组 难度：中等">
 <meta property="og:locale">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg">
-<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202502271430889.png">
-<meta property="article:published_time" content="2025-02-27T06:24:50.000Z">
-<meta property="article:modified_time" content="2025-03-06T03:40:51.552Z">
+<meta property="article:published_time" content="2025-03-12T03:03:50.000Z">
+<meta property="article:modified_time" content="2025-03-12T04:11:27.487Z">
 <meta property="article:author" content="万雨">
 <meta property="article:tag" content="leetcode">
 <meta property="article:tag" content="字节跳动">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg">
 
 
-<link rel="canonical" href="https://blog.linkee.top/posts/3b87096e/">
+<link rel="canonical" href="https://blog.linkee.top/posts/3a1e4cdd/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"cn","comments":true,"permalink":"https://blog.linkee.top/posts/3b87096e/","path":"posts/3b87096e/","title":"LCR 021. 删除链表的倒数第N个结点(中等)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"cn","comments":true,"permalink":"https://blog.linkee.top/posts/3a1e4cdd/","path":"posts/3a1e4cdd/","title":"33. 搜索旋转排序数组(中等)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>LCR 021. 删除链表的倒数第N个结点(中等) | 万雨的博客</title>
+<title>33. 搜索旋转排序数组(中等) | 万雨的博客</title>
   
 
 
@@ -205,7 +202,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="cn">
-    <link itemprop="mainEntityOfPage" href="https://blog.linkee.top/posts/3b87096e/">
+    <link itemprop="mainEntityOfPage" href="https://blog.linkee.top/posts/3a1e4cdd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -218,12 +215,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="LCR 021. 删除链表的倒数第N个结点(中等) | 万雨的博客">
+      <meta itemprop="name" content="33. 搜索旋转排序数组(中等) | 万雨的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LCR 021. 删除链表的倒数第N个结点(中等)
+          33. 搜索旋转排序数组(中等)
         </h1>
 
         <div class="post-meta-container">
@@ -233,15 +230,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2025-02-27 14:24:50" itemprop="dateCreated datePublished" datetime="2025-02-27T14:24:50+08:00">2025-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-03-06 11:40:51" itemprop="dateModified" datetime="2025-03-06T11:40:51+08:00">2025-03-06</time>
+      <time title="Created: 2025-03-12 11:03:50 / Modified: 12:11:27" itemprop="dateCreated datePublished" datetime="2025-03-12T11:03:50+08:00">2025-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -262,36 +253,33 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="1，问题描述"><a href="#1，问题描述" class="headerlink" title="1，问题描述"></a>1，问题描述</h2><p>难度：中等</p>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/SLwz0R/">LCR 021. 删除链表的倒数第 N 个结点</a></p>
-<p>给定一个链表，删除链表的倒数第 <code>n</code> 个结点，并且返回链表的头结点。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="1，问题描述"><a href="#1，问题描述" class="headerlink" title="1，问题描述"></a>1，问题描述</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组</a></p>
+<p>难度：中等</p>
+<p>整数数组 <code>nums</code> 按升序排列，数组中的值 <strong>互不相同</strong> 。</p>
+<p>在传递给函数之前，<code>nums</code> 在预先未知的某个下标 <code>k</code>（<code>0 &lt;= k &lt; nums.length</code>）上进行了 <strong>旋转</strong>，使数组变为 <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code>（下标 <strong>从 0 开始</strong> 计数）。例如， <code>[0,1,2,4,5,6,7]</code> 在下标 <code>3</code> 处经旋转后可能变为 <code>[4,5,6,7,0,1,2]</code> 。</p>
+<p>给你 <strong>旋转后</strong> 的数组 <code>nums</code> 和一个整数 <code>target</code> ，如果 <code>nums</code> 中存在这个目标值 <code>target</code> ，则返回它的下标，否则返回 <code>-1</code> 。</p>
+<p>你必须设计一个时间复杂度为 <code>O(log n)</code> 的算法解决此问题。</p>
 <p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5], n = 2</span><br><span class="line">输出：[1,2,3,5]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [4,5,6,7,0,1,2], target = 0</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1], n = 1</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [4,5,6,7,0,1,2], target = 3</span><br><span class="line">输出：-1</span><br></pre></td></tr></table></figure>
 
 <p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2], n = 1</span><br><span class="line">输出：[1]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1], target = 0</span><br><span class="line">输出：-1 </span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li>链表中结点的数目为 <code>sz</code></li>
-<li><code>1 &lt;= sz &lt;= 30</code></li>
-<li><code>0 &lt;= Node.val &lt;= 100</code></li>
-<li><code>1 &lt;= n &lt;= sz</code></li>
+<li><code>1 &lt;= nums.length &lt;= 5000</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 中的每个值都 <strong>独一无二</strong></li>
+<li>题目数据保证 <code>nums</code> 在预先未知的某个下标上进行了旋转</li>
+<li><code>-104 &lt;= target &lt;= 104</code></li>
 </ul>
-<p>**进阶：**能尝试使用一趟扫描实现吗？</p>
-<p>注意：本题与主站 19 题相同： <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/">https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/</a></p>
-<h2 id="2，初步思考"><a href="#2，初步思考" class="headerlink" title="2，初步思考"></a>2，初步思考</h2><p>滑动窗的概念进行解决</p>
-<p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202502271430889.png" alt="截屏2025-02-27 14.29.58"></p>
-<p>为了解决，head头将被替换的情况，直接给他新加一个头，</p>
-<h2 id="3，代码处理"><a href="#3，代码处理" class="headerlink" title="3，代码处理"></a>3，代码处理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title function_">removeNthFromEnd</span><span class="params">(ListNode head, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="comment">// 加一个头即可</span></span><br><span class="line">    head = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>, head);</span><br><span class="line">    <span class="type">int</span> <span class="variable">counter</span> <span class="operator">=</span> <span class="number">0</span>;<span class="comment">// 计数器</span></span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">target</span> <span class="operator">=</span> head;<span class="comment">// 需要被替代的节点</span></span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> head;</span><br><span class="line">    <span class="keyword">while</span> (pre != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (counter &lt; (n + <span class="number">1</span>)) &#123;</span><br><span class="line">            counter++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            target = target.next;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = pre.next;</span><br><span class="line">    &#125;</span><br><span class="line">    target.next = target.next.next;</span><br><span class="line">    <span class="keyword">return</span> head.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
+<h2 id="2，初步思考"><a href="#2，初步思考" class="headerlink" title="2，初步思考"></a>2，初步思考</h2><p>​	有序！要求时间复杂度为O(logn)！查找一个目标数字！</p>
+<p>​	这些提示都已经把要使用的方法直接说出来了，只能是二分查找法啊！</p>
+<p>​	需要特别注意的是二分查找时必然有一半是有序的，利用有序的那一半去做检查和处理！</p>
+<h2 id="3，代码处理"><a href="#3，代码处理" class="headerlink" title="3，代码处理"></a>3，代码处理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">_33</span>搜索旋转排序数组 &#123;</span><br><span class="line">    <span class="comment">// 解法：2分查找法，因为有时间复杂度O(logn)的要求，那么必然是二分查找法</span></span><br><span class="line">    <span class="comment">// 想办法模拟适配这个结构的二分查找法</span></span><br><span class="line">    <span class="comment">// 左右两侧不是最大值！！</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>, right = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums[left] == target) <span class="keyword">return</span> left;</span><br><span class="line">        <span class="keyword">if</span> (nums[right] == target) <span class="keyword">return</span> right;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) <span class="keyword">return</span> mid;</span><br><span class="line">            <span class="type">int</span> <span class="variable">cur</span> <span class="operator">=</span> nums[mid];</span><br><span class="line">            <span class="keyword">if</span> (nums[left] &lt;= cur) &#123;<span class="comment">// 左半边有序</span></span><br><span class="line">                <span class="keyword">if</span> (nums[left] &lt;= target &amp;&amp; target &lt;= cur) &#123;</span><br><span class="line">                    right = mid - <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    left = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;<span class="comment">// 右半边有序</span></span><br><span class="line">                <span class="keyword">if</span> (cur &lt;= target &amp;&amp; target &lt;= nums[right]) &#123;</span><br><span class="line">                    left = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    right = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        _33搜索旋转排序数组 searchRotateArray = <span class="keyword">new</span> <span class="title class_">_33</span>搜索旋转排序数组();</span><br><span class="line">        System.out.println(searchRotateArray.search(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>&#125;, <span class="number">0</span>));</span><br><span class="line">        System.out.println(searchRotateArray.search(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>&#125;, <span class="number">3</span>));</span><br><span class="line">        System.out.println(searchRotateArray.search(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>&#125;, <span class="number">3</span>));</span><br><span class="line">        System.out.println(searchRotateArray.search(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">5</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;, <span class="number">2</span>));</span><br><span class="line">        System.out.println(searchRotateArray.search(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;, <span class="number">8</span>));</span><br><span class="line">        System.out.println(searchRotateArray.search(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>&#125;, <span class="number">0</span>));</span><br><span class="line">        System.out.println(searchRotateArray.search(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;, <span class="number">8</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ,6,7,0,1,2,4,5: 3</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -309,13 +297,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/bbc18879/" rel="prev" title="1839. 所有元音按顺序排布的最长子字符串(中等)">
-                  <i class="fa fa-angle-left"></i> 1839. 所有元音按顺序排布的最长子字符串(中等)
+                <a href="/posts/1f79776c/" rel="prev" title="32. 最长有效括号(困难)">
+                  <i class="fa fa-angle-left"></i> 32. 最长有效括号(困难)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/afdf346f/" rel="next" title="神探夏洛克系列小说作品全集下载">
-                  神探夏洛克系列小说作品全集下载 <i class="fa fa-angle-right"></i>
+                <a href="/posts/c0f74f5c/" rel="next" title="49. 字母异位词分组(中等)">
+                  49. 字母异位词分组(中等) <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
