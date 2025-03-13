@@ -19,30 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.linkee.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="1，背景资料以下是关于约恩·福瑟的信息：  作者全名：Jon Fosse 作品类型：戏剧、小说、诗歌 所属国家：挪威 所获荣誉：2023年诺贝尔文学奖、易卜生奖等多项大奖 作品风格：极简主义，语言简洁，情感深沉 经典作品：《乌拉夫的梦》《有人将至》《无眠》">
+    <meta name="description" content="1，问题描述1047. 删除字符串中的所有相邻重复项 难度：简单">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2023年诺贝尔文学奖-约恩·福瑟（有人将至、乌拉夫的梦、三部曲等）作品全集下载">
-<meta property="og:url" content="https://blog.linkee.top/posts/64f0418c/index.html">
+<meta property="og:title" content="1047. 删除字符串中的所有相邻重复项(简单)">
+<meta property="og:url" content="https://blog.linkee.top/posts/67fab422/index.html">
 <meta property="og:site_name" content="万雨的博客">
-<meta property="og:description" content="1，背景资料以下是关于约恩·福瑟的信息：  作者全名：Jon Fosse 作品类型：戏剧、小说、诗歌 所属国家：挪威 所获荣誉：2023年诺贝尔文学奖、易卜生奖等多项大奖 作品风格：极简主义，语言简洁，情感深沉 经典作品：《乌拉夫的梦》《有人将至》《无眠》">
+<meta property="og:description" content="1，问题描述1047. 删除字符串中的所有相邻重复项 难度：简单">
 <meta property="og:locale">
-<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202502261054219.png">
-<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202502261055012.png">
-<meta property="article:published_time" content="2025-02-26T05:02:29.000Z">
-<meta property="article:modified_time" content="2025-02-28T07:58:39.478Z">
+<meta property="article:published_time" content="2025-03-13T06:24:50.000Z">
+<meta property="article:modified_time" content="2025-03-13T06:26:23.194Z">
 <meta property="article:author" content="万雨">
-<meta property="article:tag" content="约恩·福瑟（挪威）">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="字节跳动">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202502261054219.png">
 
 
-<link rel="canonical" href="https://blog.linkee.top/posts/64f0418c/">
+<link rel="canonical" href="https://blog.linkee.top/posts/67fab422/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"cn","comments":true,"permalink":"https://blog.linkee.top/posts/64f0418c/","path":"posts/64f0418c/","title":"2023年诺贝尔文学奖-约恩·福瑟（有人将至、乌拉夫的梦、三部曲等）作品全集下载"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"cn","comments":true,"permalink":"https://blog.linkee.top/posts/67fab422/","path":"posts/67fab422/","title":"1047. 删除字符串中的所有相邻重复项(简单)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>2023年诺贝尔文学奖-约恩·福瑟（有人将至、乌拉夫的梦、三部曲等）作品全集下载 | 万雨的博客</title>
+<title>1047. 删除字符串中的所有相邻重复项(简单) | 万雨的博客</title>
   
 
 
@@ -151,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%8C%E8%83%8C%E6%99%AF%E8%B5%84%E6%96%99"><span class="nav-text">1，背景资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%8C%E5%86%85%E5%AE%B9%E5%B1%95%E7%A4%BA"><span class="nav-text">2，内容展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="nav-text">3，下载地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="nav-text">资源下载地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%8C%E9%98%85%E8%AF%BB%E5%B1%95%E7%A4%BA"><span class="nav-text">4，阅读展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%EF%BC%8C%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E"><span class="nav-text">5，格式说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%8C%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-text">1，问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%8C%E5%88%9D%E6%AD%A5%E6%80%9D%E8%80%83"><span class="nav-text">2，初步思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%A4%84%E7%90%86"><span class="nav-text">3，代码处理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -204,7 +202,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="cn">
-    <link itemprop="mainEntityOfPage" href="https://blog.linkee.top/posts/64f0418c/">
+    <link itemprop="mainEntityOfPage" href="https://blog.linkee.top/posts/67fab422/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -217,12 +215,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="2023年诺贝尔文学奖-约恩·福瑟（有人将至、乌拉夫的梦、三部曲等）作品全集下载 | 万雨的博客">
+      <meta itemprop="name" content="1047. 删除字符串中的所有相邻重复项(简单) | 万雨的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2023年诺贝尔文学奖-约恩·福瑟（有人将至、乌拉夫的梦、三部曲等）作品全集下载
+          1047. 删除字符串中的所有相邻重复项(简单)
         </h1>
 
         <div class="post-meta-container">
@@ -232,15 +230,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2025-02-26 13:02:29" itemprop="dateCreated datePublished" datetime="2025-02-26T13:02:29+08:00">2025-02-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-28 15:58:39" itemprop="dateModified" datetime="2025-02-28T15:58:39+08:00">2025-02-28</time>
+      <time title="Created: 2025-03-13 14:24:50 / Modified: 14:26:23" itemprop="dateCreated datePublished" datetime="2025-03-13T14:24:50+08:00">2025-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,7 +240,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AF%BA%E8%B4%9D%E5%B0%94%E6%96%87%E5%AD%A6%E5%A5%96/" itemprop="url" rel="index"><span itemprop="name">诺贝尔文学奖</span></a>
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
         </span>
     </span>
 
@@ -261,47 +253,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="1，背景资料"><a href="#1，背景资料" class="headerlink" title="1，背景资料"></a>1，背景资料</h2><p>以下是关于约恩·福瑟的信息：</p>
-<ul>
-<li><strong>作者全名</strong>：Jon Fosse</li>
-<li><strong>作品类型</strong>：戏剧、小说、诗歌</li>
-<li><strong>所属国家</strong>：挪威</li>
-<li><strong>所获荣誉</strong>：2023年诺贝尔文学奖、易卜生奖等多项大奖</li>
-<li><strong>作品风格</strong>：极简主义，语言简洁，情感深沉</li>
-<li><strong>经典作品</strong>：《乌拉夫的梦》《有人将至》《无眠》</li>
-</ul>
-<h2 id="2，内容展示"><a href="#2，内容展示" class="headerlink" title="2，内容展示"></a>2，内容展示</h2><p>一共3个电子文档，文档中包含作者核心作品集</p>
-<p>包含的作品：</p>
-<p>戏剧：《有人将至》</p>
-<p>三部曲：《无眠》、《乌拉夫的梦》、《疲倦》</p>
-<p>戏剧选：《而我们将永不分离》、《名字》、《吉他男》、《秋之梦》、《一个夏日》、《死亡变奏曲》、《暗影》、《我是风》</p>
-<table>
-<thead>
-<tr>
-<th>文件名</th>
-<th>文件大小</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>有人将至：约恩•福瑟戏剧选(全九册).pdf</td>
-<td>3.40MB</td>
-</tr>
-<tr>
-<td>三部曲：约恩·福瑟.azw3</td>
-<td>538.24KB</td>
-</tr>
-<tr>
-<td>有人将至：约恩·福瑟戏剧选 (邹鲁路-译).pdf</td>
-<td>28.70MB</td>
-</tr>
-</tbody></table>
-<p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202502261054219.png" alt="截屏2025-02-26 10.42.08"></p>
-<h2 id="3，下载地址"><a href="#3，下载地址" class="headerlink" title="3，下载地址"></a>3，下载地址</h2><h3 id="资源下载地址"><a href="#资源下载地址" class="headerlink" title="资源下载地址"></a><strong><a target="_blank" rel="noopener" href="https://www.linkee.top/goods-front/pay?id=33&trafficSource=ershop">资源下载地址</a></strong></h3><h2 id="4，阅读展示"><a href="#4，阅读展示" class="headerlink" title="4，阅读展示"></a>4，阅读展示</h2><p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202502261055012.png" alt="截屏2025-02-26 10.34.07"></p>
-<h2 id="5，格式说明"><a href="#5，格式说明" class="headerlink" title="5，格式说明"></a>5，格式说明</h2><p>epub、azw3、mobi、pdf这几种格式【微信读书】app都支持</p>
-<p>Kindle支持的电子书格式还是挺多的，除了Kindle独有的AZW3、AZW、MOBI之外，还支持PRC、TXT、PDF、DOC、DOCX、GIF、PNG、BMP、JPEG这些格式。</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>1，<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_16223356/13342709">iOS苹果系统:电子书导入【微信读书】阅读</a></p>
-<p>2，<a target="_blank" rel="noopener" href="https://github.com/koodo-reader/koodo-reader/releases/tag/v1.7.9">koodo-reader全平台的电子书阅读器软件下载地址</a></p>
-<p>3，<a href="https://blog.linkee.top/categories/%E8%AF%BA%E8%B4%9D%E5%B0%94%E6%96%87%E5%AD%A6%E5%A5%96/">诺贝尔文学奖作者资源全集下载</a></p>
+    <div class="post-body" itemprop="articleBody"><h2 id="1，问题描述"><a href="#1，问题描述" class="headerlink" title="1，问题描述"></a>1，问题描述</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/">1047. 删除字符串中的所有相邻重复项</a></p>
+<p>难度：简单</p>
+<p>给出由小写字母组成的字符串 <code>s</code>，<strong>重复项删除操作</strong>会选择两个相邻且相同的字母，并删除它们。</p>
+<p>在 <code>s</code> 上反复执行重复项删除操作，直到无法继续删除。</p>
+<p>在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。 </p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：&quot;abbaca&quot;</span><br><span class="line">输出：&quot;ca&quot;</span><br><span class="line">解释：</span><br><span class="line">例如，在 &quot;abbaca&quot; 中，我们可以删除 &quot;bb&quot; 由于两字母相邻且相同，这是此时唯一可以执行删除操作的重复项。之后我们得到字符串 &quot;aaca&quot;，其中又只有 &quot;aa&quot; 可以执行重复项删除操作，所以最后的字符串为 &quot;ca&quot;。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 &lt;= s.length &lt;= 105</code></li>
+<li><code>s</code> 仅由小写英文字母组成。</li>
+</ol>
+<h2 id="2，初步思考"><a href="#2，初步思考" class="headerlink" title="2，初步思考"></a>2，初步思考</h2><p>​	模式识别，去除特殊字符，要求的时间复杂度低，自然而然想到单调栈，并且官方也是这种解题思路</p>
+<p>​	看了处理耗时最短的算法，发现他们时间复杂度、空间复杂度都最低，其本质就是一个双指针的变形</p>
+<h2 id="3，代码处理"><a href="#3，代码处理" class="headerlink" title="3，代码处理"></a>3，代码处理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayDeque;</span><br><span class="line"><span class="keyword">import</span> java.util.Deque;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">_1047</span>删除字符串中的所有相邻重复项 &#123;</span><br><span class="line">    <span class="comment">// 解法2:双指针, 时间复杂度O(n)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">removeDuplicates_double_pointer</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">char</span>[] charArray = s.toCharArray();</span><br><span class="line">        <span class="type">int</span> <span class="variable">idx</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; charArray.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (idx == -<span class="number">1</span> || charArray[idx] != charArray[i]) &#123;</span><br><span class="line">                charArray[++idx] = charArray[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                idx--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(charArray, <span class="number">0</span>, idx + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解法：单调栈</span></span><br><span class="line">    <span class="comment">// 模式识别，去除特殊字符，要求的时间复杂度低，自然而然想到单调栈</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">removeDuplicates_monostone_stack</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Deque&lt;Character&gt; stack = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">        <span class="type">char</span>[] charArray = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : charArray) &#123;</span><br><span class="line">            <span class="keyword">if</span> (stack.isEmpty() || c != stack.peek()) &#123;</span><br><span class="line">                stack.push(c);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peek() == c) &#123;</span><br><span class="line">                    stack.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">            sb.append(stack.pop());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.reverse().toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        _1047删除字符串中的所有相邻重复项 solution = <span class="keyword">new</span> <span class="title class_">_1047</span>删除字符串中的所有相邻重复项();</span><br><span class="line">        System.out.println(solution.removeDuplicates_monostone_stack(<span class="string">&quot;abbaca&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -311,21 +278,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BA%A6%E6%81%A9%C2%B7%E7%A6%8F%E7%91%9F%EF%BC%88%E6%8C%AA%E5%A8%81%EF%BC%89/" rel="tag"># 约恩·福瑟（挪威）</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+              <a href="/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/" rel="tag"># 字节跳动</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/eb37125/" rel="prev" title="战锤40k(荷鲁斯之乱、太阳围城、马格努斯之怒、统一之梦等)作品下载">
-                  <i class="fa fa-angle-left"></i> 战锤40k(荷鲁斯之乱、太阳围城、马格努斯之怒、统一之梦等)作品下载
+                <a href="/posts/5dd12dbc/" rel="prev" title="84. 柱状图中最大的矩形（困难）">
+                  <i class="fa fa-angle-left"></i> 84. 柱状图中最大的矩形（困难）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/e740685e/" rel="next" title="2021年诺贝尔文学奖-阿卜杜勒-拉扎克·古尔纳（天堂、海边等）作品全集下载">
-                  2021年诺贝尔文学奖-阿卜杜勒-拉扎克·古尔纳（天堂、海边等）作品全集下载 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
