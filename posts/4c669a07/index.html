@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/img.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/img.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/img.png">
+  <link rel="mask-icon" href="/images/img.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.linkee.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="相关技术知识： 1，背景概述​	如何设计一套文件管理系统？这个文件管理系统经济实惠、可自部署、支持多人分享下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件管理系统架构设计">
+<meta property="og:url" content="https://blog.linkee.top/posts/4c669a07/index.html">
+<meta property="og:site_name" content="万雨的博客">
+<meta property="og:description" content="相关技术知识： 1，背景概述​	如何设计一套文件管理系统？这个文件管理系统经济实惠、可自部署、支持多人分享下载">
+<meta property="og:locale">
+<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202504031828970.png">
+<meta property="og:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202504031733151.png">
+<meta property="article:published_time" content="2025-04-03T08:13:50.000Z">
+<meta property="article:modified_time" content="2025-12-02T07:49:51.950Z">
+<meta property="article:author" content="万雨">
+<meta property="article:tag" content="系统架构开发">
+<meta property="article:tag" content="文件管理系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202504031828970.png">
+
+
+<link rel="canonical" href="https://blog.linkee.top/posts/4c669a07/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"cn","comments":true,"permalink":"https://blog.linkee.top/posts/4c669a07/","path":"posts/4c669a07/","title":"文件管理系统架构设计"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>文件管理系统架构设计 | 万雨的博客</title>
+  
+
+
+
+
+
+
+
+<!-- 谷歌广告脚本 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8565093845149412" crossorigin="anonymous"></script>
+
+<!-- 微软的clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "qmhjyzkw38");
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">万雨的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-目录"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>目录</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%8C%E8%83%8C%E6%99%AF%E6%A6%82%E8%BF%B0"><span class="nav-text">1，背景概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%8C%E9%9C%80%E6%B1%82%E6%8B%86%E5%88%86"><span class="nav-text">2，需求拆分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1"><span class="nav-text">3，数据对象设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%8C%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84"><span class="nav-text">4，服务架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%EF%BC%8C%E6%96%87%E4%BB%B6%E4%B8%9A%E5%8A%A1%E6%9C%8D%E5%8A%A1"><span class="nav-text">4.1，文件业务服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%EF%BC%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%9C%8D%E5%8A%A1"><span class="nav-text">4.2，文件上传服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3%EF%BC%8C%E8%BE%85%E5%8A%A9%E6%9C%8D%E5%8A%A1"><span class="nav-text">4.3，辅助服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A"><span class="nav-text">参考链接：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="万雨"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">万雨</p>
+  <div class="site-description" itemprop="description">技术、书籍、游戏、其他</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">185</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="cn">
+    <link itemprop="mainEntityOfPage" href="https://blog.linkee.top/posts/4c669a07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="万雨">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万雨的博客">
+      <meta itemprop="description" content="技术、书籍、游戏、其他">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="文件管理系统架构设计 | 万雨的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文件管理系统架构设计
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-04-03 16:13:50" itemprop="dateCreated datePublished" datetime="2025-04-03T16:13:50+08:00">2025-04-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-12-02 15:49:51" itemprop="dateModified" datetime="2025-12-02T15:49:51+08:00">2025-12-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>相关技术知识：</p>
+<h2 id="1，背景概述"><a href="#1，背景概述" class="headerlink" title="1，背景概述"></a>1，背景概述</h2><p>​	如何设计一套文件管理系统？这个文件管理系统经济实惠、可自部署、支持多人分享下载</p>
+<p>​	或者换个方式来说，我如何设计一套百度网盘、夸克网盘，实现经济性、高速性、分享性、敏感文件封禁</p>
+<p>​	同时，我2020年在hik从零设计过一套文件管理系统，有一些可借鉴的点。</p>
+<h2 id="2，需求拆分"><a href="#2，需求拆分" class="headerlink" title="2，需求拆分"></a>2，需求拆分</h2><table>
+<thead>
+<tr>
+<th>需求</th>
+<th>翻译</th>
+<th>实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>经济性</td>
+<td>花费的资源、钱少</td>
+<td>使用资源少、最好只需要话费文件存储和网络的费用<br />没有内网部署要求的话，可以直接使用云厂商的对象存储服务<br />如果要求内网部署，那么可以使用开源的MinIO</td>
+</tr>
+<tr>
+<td>高速性</td>
+<td>下载速度快</td>
+<td>CDN加速、PCDN加速等等，能否利用p2p技术？<br />将对象存储服务的设置CDN加速</td>
+</tr>
+<tr>
+<td>分享便捷</td>
+<td>分享很简单，也有多种分享控制</td>
+<td>1，链接分享<br />2，分享时间、次数限制</td>
+</tr>
+<tr>
+<td>敏感文件封禁</td>
+<td>发现敏感文件统一封禁</td>
+<td>统一文件索引，抽象分离实体文件与文件对象</td>
+</tr>
+</tbody></table>
+<h2 id="3，数据对象设计"><a href="#3，数据对象设计" class="headerlink" title="3，数据对象设计"></a>3，数据对象设计</h2><p>​	最为核心的部分是文件对象，我在这里将文件对象拆分为2层</p>
+<p>​	1️⃣抽象（文件）层</p>
+<p>​		该对象是对外显示的文件数据对象，他主要记录文件与用户的绑定关系，与实体文件的1对1映射数据</p>
+<p>​	2️⃣实体（文件）层</p>
+<p>​		实体文件对象是直接与对象存储服务中真实存在的文件1对1映射</p>
+<p>​		如果要分享一个文件给其他人，那么直接给被分享人新建一个抽象文件并添加索引至实体文件对象即可</p>
+<p>​		如果要将一个已被确认的问题资源封禁，那么直接封禁实体文件层即可</p>
+<p>​		实体文件无论被分享多少次，他在对象存储中都只需要一个副本即可，甚至用户上传重复文件时，只有比较其md5码与实体文件一致，那么直接退出，添加索引即可，这个也是百度秒传的实现原理，这样做也极大的节省了存储资源</p>
+<p>​		</p>
+<p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202504031828970.png" alt="image-20250403182800939"></p>
+<h2 id="4，服务架构"><a href="#4，服务架构" class="headerlink" title="4，服务架构"></a>4，服务架构</h2><p>​	该文件系统是一个1️⃣查询文件、2️⃣下载文件、3️⃣上传文件、4️⃣删除文件，这四个操作频次依次降低（骤降）的情况。</p>
+<p>​	同时查询、下载（可以归类到查询操作中）、上传要求实时性，就是用户操作了一定要有结果，虽然删除在用户眼里也需要实时性，但是我们可以标记逻辑删除，之后利用计算资源闲时进行资源删除。</p>
+<p>​	</p>
+<p><img src="https://linkee-top-public.oss-cn-hangzhou.aliyuncs.com/ershop/202504031733151.png" alt="image-20250403173314109"></p>
+<p>考虑到系统的业务特点，整体业务拆分为3个服务，文件业务服务、文件上传服务、辅助服务</p>
+<h3 id="4-1，文件业务服务"><a href="#4-1，文件业务服务" class="headerlink" title="4.1，文件业务服务"></a>4.1，文件业务服务</h3><p>​	我们将查询、删除逻辑整合，编写一个微服务，这个微服务需要部署很多个节点以达到高并发、高可用、高性能</p>
+<p>​	进行查询时，先过布隆计数器、防止缓存穿透，然后查询redis-cluster集群中的目标数据，查询操作的访问基本是很少的概率会到PostgreSQL数据库查询，这极大的提升了响应速度。</p>
+<h3 id="4-2，文件上传服务"><a href="#4-2，文件上传服务" class="headerlink" title="4.2，文件上传服务"></a>4.2，文件上传服务</h3><p>​	这里要分两种情况：</p>
+<p>​	1️⃣文件流直接传递给对象存储服务（阿里云OSS、MinIO等）</p>
+<p>​		如果是这种模式的话，完全可以把文件上传服务与文件业务服务整合到一起，因为上传文件操作必然是一种“多步骤”事务操作。</p>
+<p>​		步骤：1，获取上传文件url地址；2，进行文件上传；3，主动或者被动感知上传事务完毕；</p>
+<p>​	2️⃣文件流经由微服务本体透传给对象存储服务</p>
+<p>​		这种适用于局域网（内网）的小文件的存储，之前我在hik的就是使用这种，上传文件的事务一步就搞定了，相较于“多步骤”的事务操作，更加简洁，事务原子性更强，脏数据少！但是这种操作也有缺陷就是，他是一种io密集型操作，一次上传操作耗时、耗费内存较多，所以，如果是这种情况的话，我倾向于将上传操作独立出来，单独按需分配资源。</p>
+<h3 id="4-3，辅助服务"><a href="#4-3，辅助服务" class="headerlink" title="4.3，辅助服务"></a>4.3，辅助服务</h3><p>​	将实体文件删除的事物以及其他非实时要求的操作整合到这个服务中，外部用户进行文件删除时，先调用“文件业务服务”将文件标记为逻辑删除，同时将异步删除操作丢给kafka消息队列，“辅助服务”可以选择在系统资源消耗的闲时启动去消费处理异步删除实体文件以及与之相关的业务逻辑。（你可以理解为这是一种空间换时间的操作）</p>
+<h2 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.minio.org.cn/">MinIO中国官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/549932475">Istio熔断限流</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%BC%80%E5%8F%91/" rel="tag"># 系统架构开发</a>
+              <a href="/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="tag"># 文件管理系统</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/545be1c7/" rel="prev" title="2874. 有序三元组中的最大值 II(中等)">
+                  <i class="fa fa-angle-left"></i> 2874. 有序三元组中的最大值 II(中等)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/aa0d465f/" rel="next" title="3396. 使数组元素互不相同所需的最少操作次数(简单)">
+                  3396. 使数组元素互不相同所需的最少操作次数(简单) <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDU0Mi8zNzAxMg=="></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备2022005517号-2 </a><a href="https://beian.mps.gov.cn/#/query/webSearch?code=33010802013469" rel="noopener" target="_blank">浙公网安备33010802013469号 </a>
+  </div>
+  <div class="copyright">
+    &copy; 2014 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-blog"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">万雨</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/mufasa007" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/js/third-party/comments/livere.js"></script>
+
+</body>
+</html>
